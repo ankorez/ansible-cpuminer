@@ -18,10 +18,6 @@ Run installation
 
     sudo apt update && sudo apt upgrade -y
     sudo apt install ansible
-
-Install ansible galaxy collection
-
-    ansible-galaxy collection install community.general
     
 ## Install git and clone repo
 
