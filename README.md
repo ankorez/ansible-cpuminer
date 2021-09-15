@@ -7,6 +7,11 @@ Add Ansible repo to /etc/apt/sources.list
 
 >    deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
 
+Add key for repo
+
+>    sudo apt install gnupg
+>    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+
 Run installation
 
     sudo apt update && sudo apt upgrade -y
