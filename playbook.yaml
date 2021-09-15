@@ -50,7 +50,7 @@
       ansible.builtin.cron:
         name: "cpuminer"
         special_time: reboot
-        job: "/home/pi/cpuminer-multi/cpuminer -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u benjamindavno@gmail.com"
+        job: "/home/pi/cpuminer-multi/cpuminer -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u monemail@gmail.com"
 
     - name: Reboot
       reboot:
