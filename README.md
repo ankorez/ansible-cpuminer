@@ -36,7 +36,7 @@ Add IPs of raspberry pi hosts on which we want deploy cpu-miner
 ## Edit playbook.yaml
 
     sudo nano playbook.yaml
-Change the line in playbook with your informations from minergate
+Change the line  job: in playbook with your informations from minergate
 
     - name: Add to crontab
       ansible.builtin.cron:
