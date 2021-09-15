@@ -28,9 +28,9 @@ Install ansible galaxy collection
     git clone https://github.com/ankorez/ansible-cpuminer-rpi.git
     cd ansible-cpuminer-rpi
 
-## Edit inventory
+## Edit hosts
 
-    sudo nano inventory
+    sudo nano hosts
 Add IPs of raspberry pi hosts on which we want deploy cpu-miner
 
 ## Edit playbook.yaml
@@ -46,8 +46,8 @@ Change the line  job: in playbook with your informations from minergate
       
 ## Add SSH Key on each Raspberry
 
-    ssh-copy-id pi@192.168.x.x
+    ssh-copy-id pi@ip
 
 ## Run playbook
 
-    ansible-playbook -i inventory playbook.yaml
+    ansible-playbook playbook.yaml
