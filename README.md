@@ -1,2 +1,2 @@
 # ansible-cpuminer
- deploy cpuminer with ansible
+ deploy cpuminer with ansible on rpi
