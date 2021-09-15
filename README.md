@@ -5,7 +5,7 @@ Note: need Ansible 2.9. Check version with ansible --version
 
 ## Install Ansible
 Add Ansible repo to /etc/apt/sources.list
-
+    sudo nano /etc/apt/sources.list
     deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main
 
 Add key for repo
