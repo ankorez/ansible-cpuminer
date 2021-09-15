@@ -23,8 +23,8 @@ Install ansible galaxy collection
 ## Install git and clone repo
 
     sudo apt install git
-    git clone https://github.com/ankorez/ansible-cpuminer.git
-    cd ansible-cpuminer
+    git clone https://github.com/ankorez/ansible-cpuminer-rpi.git
+    cd ansible-cpuminer-rpi
 
 ## Edit inventory
 
