@@ -1,0 +1,56 @@
+---
+- hosts: all
+  remote_user: pi
+  become: true 
+  gather_facts: False
+  tasks:
+    - name: Update apt-get repo and cache
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: Upgrade all apt packages
+      apt: upgrade=dist force_apt_get=yes
+
+    - name: Install a list of packages
+      apt:
+        pkg:
+        - automake
+        - autoconf
+        - pkg-config
+        - libcurl4-openssl-dev
+        - libjansson-dev
+        - libssl-dev
+        - libgmp-dev
+        - zlib1g-dev
+        - make
+        - g++
+        - git
+     
+    - name: Clone repo cpuminer
+      ansible.builtin.git:
+        repo: https://github.com/tpruvot/cpuminer-multi.git
+        dest: /home/pi/cpuminer-multi
+        version: linux
+
+    - name: Run autogen
+      ansible.builtin.shell: ./autogen.sh
+      args:
+        chdir: /home/pi/cpuminer-multi/
+
+    - name: Run configure
+      ansible.builtin.shell: ./configure
+      args:
+        chdir: /home/pi/cpuminer-multi/
+ 
+    - name: Run build
+      ansible.builtin.shell: ./build.sh
+      args:
+        chdir: /home/pi/cpuminer-multi/
+
+    - name: Add to crontab
+      ansible.builtin.cron:
+        name: "cpuminer"
+        special_time: reboot
+        job: "/home/pi/cpuminer-multi/cpuminer -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u benjamindavno@gmail.com"
+
+    - name: Reboot
+      reboot:
