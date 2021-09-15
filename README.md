@@ -1,6 +1,7 @@
 # ansible-cpuminer-rpi
 
 For easy deploy cpuminer on raspberry pi
+Note: need Ansible 2.9. Check version with ansible --version
 
 ## Install Ansible
 Add Ansible repo to /etc/apt/sources.list
