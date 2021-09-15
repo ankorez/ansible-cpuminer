@@ -28,7 +28,7 @@ Run installation
 ## Edit hosts
 
     sudo nano hosts
-Add IPs of raspberry pi hosts on which we want deploy cpu-miner
+Add IPs of raspberry pi hosts on which we want deploy cpuminer
 
 ## Edit playbook.yaml
 
