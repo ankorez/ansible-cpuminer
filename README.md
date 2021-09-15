@@ -19,10 +19,13 @@ Run installation
 Install ansible galaxy collection
 
     ansible-galaxy collection install community.general
+    
+## Install git
 
-## Add SSH Key on each Raspberry
-
-    ssh-copy-id pi@192.168.x.x
+    sudo apt install git
+Cloner le depot
+    git clone https://github.com/ankorez/ansible-cpuminer.git
+    cd ansible-cpuminer
 
 ## Edit inventory
 
@@ -39,6 +42,10 @@ Change the line in playbook with your informations from minergate
         name: "cpuminer"
         special_time: reboot
         job: "/home/pi/cpuminer-multi/cpuminer -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u monemail@gmail.com"
+      
+## Add SSH Key on each Raspberry
+
+    ssh-copy-id pi@192.168.x.x
 
 ## Run playbook
 
