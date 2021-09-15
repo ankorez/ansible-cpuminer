@@ -15,6 +15,7 @@ Add key for repo
 Run installation
 
     sudo apt update && sudo apt upgrade -y
+    sudo apt install ansible
 
 Install ansible galaxy collection
 
