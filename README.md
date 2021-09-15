@@ -20,10 +20,9 @@ Install ansible galaxy collection
 
     ansible-galaxy collection install community.general
     
-## Install git
+## Install git and clone repo
 
     sudo apt install git
-Cloner le depot
     git clone https://github.com/ankorez/ansible-cpuminer.git
     cd ansible-cpuminer
 
